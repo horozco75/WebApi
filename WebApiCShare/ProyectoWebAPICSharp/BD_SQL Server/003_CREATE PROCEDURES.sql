@@ -87,7 +87,7 @@ begin
 
 --select * from usuario where IdUsuario = @idusuario
 select u.IdUsuario, u.DocumentoIdentidad, u.Nombres, u.Telefono, u.Correo, u.Ciudad, u.FechaRegistro,
-r.idrol,r.descripcion as Rol from usuario u INNER JOIN roles r on r.idrol = u.idrol where IdUsuario = @idusuario
+u.idrol,r.descripcion as Rol from usuario u INNER JOIN roles r on r.idrol = u.idrol where IdUsuario = @idusuario
 end
 
 go
@@ -96,7 +96,7 @@ as
 begin
 
 --select * from usuario
-select u.IdUsuario, u.DocumentoIdentidad, u.Nombres, u.Telefono, u.Correo, u.Ciudad, r.descripcion as Rol from usuario u INNER JOIN roles r on r.idrol = u.idrol
+select u.IdUsuario, u.DocumentoIdentidad, u.Nombres, u.Telefono, u.Correo, u.Ciudad, u.idrol, r.descripcion as Rol from usuario u INNER JOIN roles r on r.idrol = u.idrol
 end
 
 
