@@ -33,10 +33,17 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1">Ciudad</label>
                         <input type="text" class="form-control" id="txtciudad" placeholder="">
-                    </div>
+                    </div>                    
                     <div class="form-group">
                         <label for="exampleInputEmail1">Rol</label>
-                        <input type="text" class="form-control" id="txtrol" placeholder="Favor Digite el Numero">
+                        <select id="txtrol">
+                            <option class="form-control" value="0">Seleccione</option>
+                            <option class="form-control" value="1">Supervisor</option>
+                            <option class="form-control" value="2">Arquitecto Software</option>
+                            <option class="form-control" value="3">Desarrollador</option>
+                            <option class="form-control" value="4">Analista</option>
+                            <option class="form-control" value="5">DevOps</option>
+                        </select>
                     </div>
                     <button type="button" class="btn btn-primary" onclick="GuardarUsuario()">Guardar</button>
                     <button type="button" class="btn btn-warning" onclick="IrFormularioInicio()">Volver</button>
@@ -78,8 +85,9 @@
                 $("#txtnombres").val(response.Nombres),
                 $("#txttelefono").val(response.Telefono),
                 $("#txtcorreo").val(response.Correo),
-                $("#txtciudad").val(response.Ciudad),
-                $("#txtrol").val(response.Rol)
+                $("#txtciudad").val(response.Ciudad),                
+                ///$("#txtrol").val(response.Rol)
+                $("#txtrol").val(response.IdRol)
             });
         }
 

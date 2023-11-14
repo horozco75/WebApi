@@ -14,7 +14,7 @@ namespace WebApi.Models
         public string Correo { get; set; }
         public string Ciudad { get; set; }
         public DateTime FechaRegistro { get; set; }
-        //public int Rol { get; set; }
+        public int IdRol { get; set; }
         public string Rol { get; set; }
 
     }

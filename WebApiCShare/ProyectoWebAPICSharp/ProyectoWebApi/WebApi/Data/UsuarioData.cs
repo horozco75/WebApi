@@ -88,7 +88,7 @@ namespace WebApi.Data
                                 Correo = dr["Correo"].ToString(),
                                 Ciudad = dr["Ciudad"].ToString(),
                                 //FechaRegistro = Convert.ToDateTime(dr["FechaRegistro"].ToString()),
-                                //Rol = Convert.ToInt32(dr["Rol"])
+                                IdRol = Convert.ToInt32(dr["IdRol"]),
                                 Rol = dr["Rol"].ToString()
                             });
                         }
@@ -134,7 +134,7 @@ namespace WebApi.Data
                                 Correo = dr["Correo"].ToString(),
                                 Ciudad = dr["Ciudad"].ToString(),
                                 FechaRegistro = Convert.ToDateTime(dr["FechaRegistro"].ToString()),
-                                //Rol = Convert.ToInt32(dr["IdRol"])
+                                IdRol = Convert.ToInt32(dr["IdRol"]),
                                 Rol = dr["Rol"].ToString()
                             };
                         }
