@@ -1,6 +1,6 @@
 USE [TEST]
 GO
-/****** Object:  Table [dbo].[Departamento]    Script Date: 24/01/2024 15:25:30 ******/
+/****** Object:  Table [dbo].[Departamento]    Script Date: 24/01/2024 16:44:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[Departamento](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Documentos]    Script Date: 24/01/2024 15:25:30 ******/
+/****** Object:  Table [dbo].[Documentos]    Script Date: 24/01/2024 16:44:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -36,7 +36,7 @@ CREATE TABLE [dbo].[Documentos](
 	[LugarArchivo] [varchar](150) NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Usuarios]    Script Date: 24/01/2024 15:25:30 ******/
+/****** Object:  Table [dbo].[Usuarios]    Script Date: 24/01/2024 16:44:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -120,7 +120,22 @@ ALTER TABLE [dbo].[Usuarios] ADD  CONSTRAINT [DF_Usuarios_Creado]  DEFAULT (getd
 GO
 ALTER TABLE [dbo].[Usuarios] ADD  CONSTRAINT [DF_Usuarios_Modificado]  DEFAULT (getdate()) FOR [Modificado]
 GO
-/****** Object:  StoredProcedure [dbo].[INS_Documento]    Script Date: 24/01/2024 15:25:30 ******/
+/****** Object:  StoredProcedure [dbo].[Emplogin]    Script Date: 24/01/2024 16:44:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create procedure [dbo].[Emplogin]  
+(  
+@Usename Varchar (20),  
+@word varchar (10)  
+)  
+as  
+Begin  
+Select COUNT(*) FROM [TEST].[dbo].[Usuarios] where [Nombre]=@Usename and [Clave]=@word  
+End  
+GO
+/****** Object:  StoredProcedure [dbo].[INS_Documento]    Script Date: 24/01/2024 16:44:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -148,7 +163,7 @@ SELECT FORMAT(GETDATE(),'MM/dd') Fecha;
 end;
 
 GO
-/****** Object:  StoredProcedure [dbo].[sp_guardar_documento]    Script Date: 24/01/2024 15:25:30 ******/
+/****** Object:  StoredProcedure [dbo].[sp_guardar_documento]    Script Date: 24/01/2024 16:44:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -187,7 +202,7 @@ begin
 end
 
 GO
-/****** Object:  StoredProcedure [dbo].[ValidaUser]    Script Date: 24/01/2024 15:25:30 ******/
+/****** Object:  StoredProcedure [dbo].[ValidaUser]    Script Date: 24/01/2024 16:44:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
