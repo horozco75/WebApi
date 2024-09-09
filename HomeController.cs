@@ -26,7 +26,18 @@ namespace app.Controllers
         {
             if (ModelState.IsValid)
             {
-                return View();
+                //return View();
+                //if (datos.Login() == true)
+                if (datos.Login2() == true)
+                {
+                    Session["Usuario"] = datos.User;                    
+                    return View();
+                }
+                else
+                {
+                    return View("Index");
+                }
+               
             }
             else
             {
