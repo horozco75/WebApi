@@ -4,5 +4,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Usuarios</h2>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @{ 
+        string user = Convert.ToString(Session["Usuario"]);        
+    }
+
+
+</head>
+<body>
+    <div>
+        <h2>Bienvenido: @user </h2>
+        @*@RenderBody()*@
+    </div>
+
+    <footer>
+        <center>
+            <p>&copy; Haos</p>
+        </center>
+    </footer>
+
+</body>
+</html>
 
